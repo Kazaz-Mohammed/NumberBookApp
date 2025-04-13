@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:padding="16dp"
+    tools:context=".ContactActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Styled App Bar Title with SVG icon -->
+    <LinearLayout
+        android:id="@+id/titleContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
+
+        <ImageView
+            android:id="@+id/phoneIcon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/phone_icon"
+            android:contentDescription="Phone icon" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Contacts"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#2C3E50" />
+    </LinearLayout>
+
+
+<!--    <Button-->
+<!--        android:id="@+id/btnSendContacts"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Send All Contacts"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:background="@null"-->
+<!--        android:layout_below="@id/titleContainer"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginBottom="12dp"-->
+<!--        android:drawableStart="@drawable/send_icon"-->
+<!--        android:drawablePadding="8dp"-->
+<!--        android:paddingStart="16dp"-->
+<!--        android:paddingEnd="16dp"-->
+<!--        android:drawableTint="#FFFFFF"-->
+<!--        android:tintMode="src_in"-->
+<!--        tools:ignore="VectorDrawableCompat"-->
+<!--        android:backgroundTint="#FF5722"-->
+<!--        />-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSendContacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send All Contacts"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_background"
+        android:layout_below="@id/titleContainer"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="12dp"
+        android:drawablePadding="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:drawableStartCompat="@drawable/send_icon"
+        app:drawableTint="#FFFFFF"
+        android:tintMode="multiply"
+        style="@style/Widget.AppCompat.Button.Colored"
+        tools:ignore="VectorDrawableCompat" />
+
+    <!-- Contacts List -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Search Contacts"
+        android:background="@drawable/searchview_bg"
+        android:iconifiedByDefault="false"
+        android:layout_below="@id/btnSendContacts"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+
+    <ListView
+        android:id="@+id/lvContacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchView"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"
+        android:padding="6dp" />
+
+</RelativeLayout>
